@@ -19,7 +19,7 @@ public class Asteroid : MonoBehaviour
         _rigidbody.MoveRotation(Random.Range(-50, 50));
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.y < Borders.Instance.DownBorder - OFFSET)
             Destroy(gameObject);
