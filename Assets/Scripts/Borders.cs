@@ -12,9 +12,10 @@ public class Borders : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
+        Init();
+	}
 
-    private void Init()
+	private void Init()
     {
         Camera cam = Camera.main;
         UpBorder = cam.transform.position.y + cam.orthographicSize;
