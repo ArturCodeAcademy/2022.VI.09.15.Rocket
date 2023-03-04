@@ -8,7 +8,9 @@ public class Health : MonoBehaviour
     private float _health;
     [SerializeField, Min(0)]
     private float _damage;
-    [SerializeField]
+	[SerializeField, Min(0)]
+	private float _medkit;
+	[SerializeField]
     private Slider _healthSlider;
 
 	private void Start()
@@ -26,6 +28,12 @@ public class Health : MonoBehaviour
 
 			if (_health <= 0)
 				SceneManager.LoadScene(0);
+		}
+		else if (collision.gameObject.TryGetComponent(out Medkit medkit))
+		{
+			_health = Mathf.Min(_health + _medkit, _healthSlider.maxValue);
+			_healthSlider.value = _health;
+			Destroy(medkit.gameObject);
 		}
 	}
 }

@@ -15,7 +15,7 @@ public class Medkit : MonoBehaviour
 			new Vector2(Random.Range(-1, 1), -1).normalized * VELOCITY,
 			ForceMode2D.Impulse
 		);
-		_rigidbody.AddTorque(Random.Range(-100, 100));
+		_rigidbody.AddTorque(Random.Range(-10, 10));
 	}
 
 	private void Update()
