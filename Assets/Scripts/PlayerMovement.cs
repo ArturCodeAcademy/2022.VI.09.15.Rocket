@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 #if UNITY_ANDROID
-        float x = acceleration.x;
+        float x = Input.acceleration.x;
 #else
         float x = Input.GetAxis("Horizontal");
 #endif
